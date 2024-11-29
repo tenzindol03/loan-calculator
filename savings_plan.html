@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Savings Plan</h1>
+        <form action="/savings_plan" method="post" class="form-container">
+            <label for="total_expenses">Total Moving Expenses ($):</label>
+            <input type="number" id="total_expenses" name="total_expenses" step="0.01" placeholder="e.g., 15000" required>
+
+            <label for="current_savings">
+                Current Savings ($): 
+                <span class="tooltip">i
+                    <span class="tooltiptext">The amount of money you've already saved for your move.</span>
+                </span>
+            </label>
+            <input type="number" id="current_savings" name="current_savings" step="0.01" placeholder="e.g., 5000" required>
+
+            <label for="monthly_saving_capacity">
+                Monthly Saving Capacity ($): 
+                <span class="tooltip">i
+                    <span class="tooltiptext">How much you can save per month toward your moving goal.</span>
+                </span>
+            </label>
+            <input type="number" id="monthly_saving_capacity" name="monthly_saving_capacity" step="0.01" placeholder="e.g., 800" required>
+
+            <label for="moving_date">
+                Planned Moving Date: 
+                <span class="tooltip">i
+                    <span class="tooltiptext">The date by which you plan to complete your move.</span>
+                </span>
+            </label>
+            <input type="date" id="moving_date" name="moving_date" required>
+
+            <button type="submit">Calculate Savings Plan</button>
+        </form>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

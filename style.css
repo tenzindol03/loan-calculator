@@ -1,0 +1,184 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Kanit:wght@400;500;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #F1F1F1; /* Light Gray */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #073D7F; /* Dark Blue */
+}
+
+/* Main Container */
+.main-container {
+    text-align: center;
+    max-width: 900px;
+    background: #ffffff; /* White for contrast */
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+h1 {
+    font-family: 'Chango', cursive;
+    font-size: 36px;
+    color: #073D7F; /* Dark Blue */
+    margin-bottom: 20px;
+}
+
+/* Layout for results and chart */
+.results-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px; /* Space between the result and the chart */
+    flex-wrap: wrap; /* Ensure responsiveness for smaller screens */
+}
+
+/* Result Section */
+.result-container {
+    flex: 1;
+    background-color: #F4B443; /* Yellow */
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #073D7F; /* Dark Blue Border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: #073D7F; /* Dark Blue */
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Form Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    color: #073D7F; /* Dark Blue */
+    text-align: left;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 2px solid #6491DE; /* Blue */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #073D7F; /* Dark Blue */
+    background-color: #F1F1F1; /* Light Gray */
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #073D7F; /* Dark Blue highlight */
+    outline: none;
+    box-shadow: 0 0 10px rgba(7, 61, 127, 0.4);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #073D7F; /* Dark Blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #6491DE; /* Slightly lighter blue */
+    transform: translateY(-3px);
+}
+
+a.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #073D7F; /* Dark Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.button:hover {
+    background-color: #6491DE;
+    transform: translateY(-3px);
+}
+
+/* Chart container */
+.chart-container {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* White background for chart */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #6491DE;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .results-layout {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #6491DE; /* Blue color for the (i) icon */
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden; /* Tooltip is hidden by default */
+    opacity: 0; /* Fully transparent initially */
+    width: 240px; /* Adjust tooltip width */
+    background-color: #073D7F; /* Dark Blue */
+    color: #ffffff; /* White text */
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%; /* Position tooltip above (i) icon */
+    left: 50%;
+    margin-left: -120px; /* Center the tooltip horizontally */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Tooltip becomes visible on hover */
+    opacity: 1; /* Tooltip becomes fully opaque */
+}

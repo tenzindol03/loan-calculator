@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculation Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Loan Calculation Results</h1>
+        
+        <div class="results-layout">
+            <!-- Loan Details -->
+            <div class="result-container">
+                <p><strong>Total Expenses:</strong> ${{ "{:,.2f}".format(result.total_expenses) }}</p>
+                <p><strong>Down Payment:</strong> ${{ "{:,.2f}".format(result.down_payment) }}</p>
+                <p><strong>Loan Amount:</strong> ${{ "{:,.2f}".format(result.loan_amount) }}</p>
+                <p><strong>Monthly Payment:</strong> ${{ "{:,.2f}".format(result.monthly_payment) }}</p>
+
+            </div>
+
+            <!-- Chart -->
+            <div class="chart-container">
+                <img src="{{ pie_chart }}" alt="Loan Expense Breakdown">
+            </div>
+        </div>
+        
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
